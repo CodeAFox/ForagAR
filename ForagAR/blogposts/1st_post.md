@@ -1,0 +1,20 @@
+Group 1 consists of Alex, Kriszti, Salomeea, and Angela. The beginning of group 1 started after the first lesson, in which we brainstormed possible ideas for the AR project. Some of those ideas were Furniture Placement, Constellation Identifier, and Foraging Identifier.
+
+During our first lab session, we evaluated what would each of those project ideas entailed and which projects we had a personal interest on; the discussion concluded with the Foraging Identifier. This discussion was valuable and enriching for the team since, during our brainstorming ideas, we even came up with a VR one; this idea was a Mental Disorder Simulation that could help understand the hardship of the daily life and reduce the stigmatisation of the disorder. Even if this idea originated during our AR brainstorming, we quickly realised that it would fit better as a VR project since it required the user to feel present in that environment, which relates to what we learned in the first lesson about VR creating an immersive virtual environment. We are unsure if we will go forward with it, but we will definitely consider it.
+
+We also discussed the features and the “forageable” items that we wanted our system to have, in which we agreed that mushrooms, plants, and flowers. For the mushrooms feature, we agreed that our system should show the user other similar-looking ones, so that they could assess it themselves before mistakenly telling our users the wrong mushroom type and poisoning our users 🙂 , as per the flowers, our system should show which are potentially toxic to common domestic pets. Kriszti drew on their tablet a quick mockup of the overall idea we kept describing, so that we would ensure that we all had the same idea and visualisation of the project, and so that we could execute that consistently in the future lab sessions. Later, Salomeea had a great idea of maybe considering which flowers are edible for tea.
+
+After the discussion and the agreement on the project idea, we decided to start by researching 3D models that are publicly available that we could use for our system. Angela found a mushroom one online that had 66 different  3D models ([here](https://sketchfab.com/baxterbaxter/collections/mushrooms-cc43c8393b384cdd924c1db5664daf29?fbclid=IwY2xjawUb1JxwZG9mBGV4dG4DYWVtAjExAHNydGMGYXBwX2lkATAAAR4LxtJdsyodPU-6v5iAj0gM5Z01f7kitTHw_w_YozLTjb3_Kb8lTFXtY14Ndw_aem_n7PkacBhA0ZyiXF_AFQ0TQ) ). However, not all of them were useful since some of them didnt have their name and had a very vague title, such as “mushroom meeting” or “mushroom in the forest”. We then proceeded by printing all the mushrooms in that package and grouping them by how similar they visually looked, then Angela wrote in the back of the image their group and their name according to the package. In the mean time, Alex started rearching about helpful documentation for us, and they found a book that would heavily support our system, so they started writing in a google docs all the relevant info about each mushroom that Angela had written the name of, and Kriszti started setting up the Unity project and the GitHub. When Kriszti finished the setting up, they helped Alex in the data collection along with Salomeea.
+
+Our last part of the lab ended by discussing which next tasks should we do and who should do them until next time, in which we agreed:
+1. Get the mushroom 3D into the Unity (Kriszti)
+2. Get the documentation started (Angela)
+3. Collect info on plants and flowers (Salomeea)
+4. Continue collecting the info on the mushrooms (Alex)
+
+Salomeea then brought up the question of how many plants and flowers we should do, specially since we currently have around 60 different types of mushrooms. We agreed our project should illustrate how that can be done instead of worrying too much into how much available data we can feed it. So we decided “a couple plants and a couple flowers”.
+
+So by the end of the lab, we have achieved: coming to agreement to project idea, prepared our mushroom data, set up our Unity project and GitHub, agreed what we should have done each one of us until our next lab.
+
+Author: Angela
+
