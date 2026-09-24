@@ -230,37 +230,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &67221682
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 67221683}
-  m_Layer: 0
-  m_Name: PuffballMushroom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &67221683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67221682}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -330.62244, y: -0.00001, z: 444.7901}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72989974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1179,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2512387470890420967, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       insertIndex: 0
       addedObject: {fileID: 436358034}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2512387469002778309, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 331264288}
   m_SourcePrefab: {fileID: 100100000, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
 --- !u!114 &331264286 stripped
 MonoBehaviour:
@@ -1223,6 +1195,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &331264287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2512387469002778309, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
+  m_PrefabInstance: {fileID: 331264285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &331264288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331264287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &332374253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,8 +1472,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraToFace: {fileID: 0}
   m_ObjectPrefabs:
-  - {fileID: 8986328500875594450, guid: d825bbdf58c379d4290da92e387f71d0, type: 3}
+  - {fileID: 8829377244055881403, guid: 83da7cfce345c3342859735ace0b118e, type: 3}
   - {fileID: 7657548977611231357, guid: 3cbfcd4079a5031478389d5ab3c8c311, type: 3}
+  - {fileID: 8986328500875594450, guid: d825bbdf58c379d4290da92e387f71d0, type: 3}
   - {fileID: 3555902977704940904, guid: 23412048bf4821d4f8bf5c7d9c1abd5b, type: 3}
   - {fileID: 5419581123709780336, guid: aaf6326249753074fbc1148303020f26, type: 3}
   - {fileID: 7279467769842343898, guid: b1b37ac0eaa6a9a4785fc1f26065e8b3, type: 3}
@@ -1824,6 +1846,10 @@ PrefabInstance:
       propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 769660191372048337, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1579366325745436317, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_Name
       value: GreetingCTA
@@ -1831,6 +1857,10 @@ PrefabInstance:
     - target: {fileID: 2941317804501384629, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_Name
       value: Continue Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5865099264268480235, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8374,4 +8404,3 @@ SceneRoots:
   - {fileID: 1323550134}
   - {fileID: 2099970469}
   - {fileID: 331264285}
-  - {fileID: 67221683}
