@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee7212f518998f41817df1a2301f815, type: 3}
+  m_Name: MushroomCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::ForagAR.Library.MushroomCatalog
+  m_Entries:
+  - displayName: Puffball Mushroom
+    prefab: {fileID: 8829377244055881403, guid: 83da7cfce345c3342859735ace0b118e, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    identification: 'Information about puffball:
+
+
+      They are edible '
