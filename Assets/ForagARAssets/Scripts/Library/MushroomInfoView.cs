@@ -5,9 +5,21 @@ using UnityEngine.UI;
 namespace ForagAR.Library
 {
     /// <summary>
+    /// The tabs of the information section, in the order their buttons appear.
+    /// </summary>
+    public enum MushroomInfoTab
+    {
+        Description,
+        Habitat,
+        Uses,
+        LookAlikes,
+    }
+
+    /// <summary>
     /// Swaps the bottom panel between the library and the information section of a mushroom.
     /// The information is shown after a mushroom is placed, or when a placed mushroom is selected.
-    /// Text comes from the mushroom's entry in the <see cref="MushroomCatalog"/>.
+    /// It is split into tabs, and the text of each tab comes from the mushroom's entry in the
+    /// <see cref="MushroomCatalog"/>.
     /// </summary>
     public class MushroomInfoView : MonoBehaviour
     {
@@ -38,13 +50,34 @@ namespace ForagAR.Library
         Button m_BackButton;
 
         [SerializeField]
-        [Tooltip("Shown when a mushroom has no identification text yet. {0} is the mushroom's name.")]
-        string m_PlaceholderText = "<i>Identifiers for {0} will be added here.</i>";
+        [Tooltip("One button per tab, in the order of MushroomInfoTab: Description, Habitat, Uses, Look-Alikes.")]
+        Button[] m_TabButtons = new Button[0];
+
+        [SerializeField]
+        Color m_TabColor = new Color32(0x2D, 0x34, 0x2A, 0xFF);
+
+        [SerializeField]
+        Color m_SelectedTabColor = new Color32(0x6B, 0x8F, 0x4E, 0xFF);
+
+        [SerializeField]
+        Color m_TabTextColor = new Color32(0xA8, 0xAD, 0x9C, 0xFF);
+
+        [SerializeField]
+        Color m_SelectedTabTextColor = new Color32(0xEE, 0xEA, 0xDE, 0xFF);
+
+        [SerializeField]
+        [Tooltip("Shown when a tab has no text yet. {0} is the mushroom's name, {1} the tab's name.")]
+        string m_PlaceholderText = "<i>No {1} added for {0} yet.</i>";
 
         /// <summary>
         /// The mushroom whose information is showing, or null while the library is showing.
         /// </summary>
         public MushroomEntry currentEntry { get; private set; }
+
+        /// <summary>
+        /// The tab showing in the information section.
+        /// </summary>
+        public MushroomInfoTab currentTab { get; private set; }
 
         void OnEnable()
         {
@@ -55,6 +88,16 @@ namespace ForagAR.Library
 
             if (m_BackButton != null)
                 m_BackButton.onClick.AddListener(ShowLibrary);
+
+            for (var i = 0; i < m_TabButtons.Length; i++)
+            {
+                if (m_TabButtons[i] == null)
+                    continue;
+
+                // Copy the index so each button's listener keeps its own tab.
+                var tab = (MushroomInfoTab)i;
+                m_TabButtons[i].onClick.AddListener(() => ShowTab(tab));
+            }
         }
 
         void OnDisable()
@@ -66,6 +109,12 @@ namespace ForagAR.Library
 
             if (m_BackButton != null)
                 m_BackButton.onClick.RemoveListener(ShowLibrary);
+
+            foreach (var button in m_TabButtons)
+            {
+                if (button != null)
+                    button.onClick.RemoveAllListeners();
+            }
         }
 
         void Start()
@@ -73,6 +122,9 @@ namespace ForagAR.Library
             ShowLibrary();
         }
 
+        /// <summary>
+        /// Shows the information section for <paramref name="entry"/>, opened on the Description tab.
+        /// </summary>
         public void ShowInfo(MushroomEntry entry)
         {
             if (entry == null)
@@ -90,14 +142,25 @@ namespace ForagAR.Library
                 m_ScientificName.text = hasScientificName ? entry.scientificName : string.Empty;
             }
 
-            if (m_Body != null)
-            {
-                m_Body.text = string.IsNullOrWhiteSpace(entry.identification)
-                    ? string.Format(m_PlaceholderText, entry.displayName)
-                    : entry.identification;
-            }
-
             SetShowingInfo(true);
+            ShowTab(MushroomInfoTab.Description);
+        }
+
+        /// <summary>
+        /// Switches the information section to <paramref name="tab"/> for the current mushroom.
+        /// </summary>
+        public void ShowTab(MushroomInfoTab tab)
+        {
+            currentTab = tab;
+            UpdateTabButtons();
+
+            if (currentEntry == null || m_Body == null)
+                return;
+
+            var text = GetTabText(currentEntry, tab);
+            m_Body.text = string.IsNullOrWhiteSpace(text)
+                ? string.Format(m_PlaceholderText, currentEntry.displayName, GetTabName(tab).ToLowerInvariant())
+                : text;
 
             if (m_BodyScroll != null)
             {
@@ -110,6 +173,56 @@ namespace ForagAR.Library
         {
             currentEntry = null;
             SetShowingInfo(false);
+        }
+
+        /// <summary>
+        /// The label shown on a tab's button.
+        /// </summary>
+        public static string GetTabName(MushroomInfoTab tab)
+        {
+            switch (tab)
+            {
+                case MushroomInfoTab.Description: return "Description";
+                case MushroomInfoTab.Habitat: return "Habitat";
+                case MushroomInfoTab.Uses: return "Uses";
+                case MushroomInfoTab.LookAlikes: return "Look-Alikes";
+                default: return tab.ToString();
+            }
+        }
+
+        static string GetTabText(MushroomEntry entry, MushroomInfoTab tab)
+        {
+            switch (tab)
+            {
+                case MushroomInfoTab.Description: return entry.description;
+                case MushroomInfoTab.Habitat: return entry.habitat;
+                case MushroomInfoTab.Uses: return entry.uses;
+                // Links to the look-alike mushrooms will go under this text once the library has more of them.
+                case MushroomInfoTab.LookAlikes: return entry.lookAlikes;
+                default: return null;
+            }
+        }
+
+        void UpdateTabButtons()
+        {
+            for (var i = 0; i < m_TabButtons.Length; i++)
+            {
+                var button = m_TabButtons[i];
+                if (button == null)
+                    continue;
+
+                var selected = i == (int)currentTab;
+
+                if (button.targetGraphic != null)
+                    button.targetGraphic.color = selected ? m_SelectedTabColor : m_TabColor;
+
+                var label = button.GetComponentInChildren<TMP_Text>();
+                if (label != null)
+                {
+                    label.color = selected ? m_SelectedTabTextColor : m_TabTextColor;
+                    label.fontStyle = selected ? FontStyles.Bold : FontStyles.Normal;
+                }
+            }
         }
 
         void SetShowingInfo(bool showInfo)

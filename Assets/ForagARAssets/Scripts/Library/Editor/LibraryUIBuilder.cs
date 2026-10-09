@@ -12,7 +12,8 @@ namespace ForagAR.Library.Editor
     /// <summary>
     /// One-click setup of the mushroom library UI in the open scene:
     /// a canvas whose bottom half holds a filter bar and a scrolling grid of mushroom cards, and an
-    /// information section that replaces the library once a mushroom is placed or selected.
+    /// tabbed information section that replaces the library once a mushroom is placed or selected.
+    /// A handle with an arrow button on top of the panel minimizes it to show the AR view full screen.
     /// Running it again rebuilds the library from scratch.
     /// </summary>
     static class LibraryUIBuilder
@@ -24,7 +25,11 @@ namespace ForagAR.Library.Editor
 
         // Layout in reference units (1080 x 1920 canvas, matched on width).
         const float k_PanelPadding = 32f;
+        const float k_HandleHeight = 80f;
+        static readonly Vector2 k_MinimizeButtonSize = new Vector2(180f, 60f);
         const float k_FilterBarHeight = 120f;
+        const float k_TabBarHeight = 88f;
+        const float k_TabSpacing = 12f;
         const int k_Columns = 3;
         static readonly Vector2 k_CardSize = new Vector2(300f, 360f);
         const float k_CardSpacing = 30f;
@@ -48,8 +53,9 @@ namespace ForagAR.Library.Editor
 
             var canvas = CreateCanvas();
             var panel = CreatePanel(canvas.transform);
+            var minimizeButton = CreateHandle(panel, out var minimizeLabel);
 
-            // The panel shows either the library or a mushroom's information section.
+            // Below the handle, the panel shows either the library or a mushroom's information section.
             var libraryContent = CreateGroup("Library Content", panel);
             CreateFilterBar(libraryContent);
             var content = CreateScrollView(libraryContent);
@@ -90,8 +96,20 @@ namespace ForagAR.Library.Editor
             infoSettings.FindProperty("m_Body").objectReferenceValue = info.body;
             infoSettings.FindProperty("m_BodyScroll").objectReferenceValue = info.bodyScroll;
             infoSettings.FindProperty("m_BackButton").objectReferenceValue = info.backButton;
+            var tabButtons = infoSettings.FindProperty("m_TabButtons");
+            tabButtons.arraySize = info.tabButtons.Length;
+            for (var i = 0; i < info.tabButtons.Length; i++)
+                tabButtons.GetArrayElementAtIndex(i).objectReferenceValue = info.tabButtons[i];
             infoSettings.ApplyModifiedPropertiesWithoutUndo();
             info.root.gameObject.SetActive(false);
+
+            var minimizer = Undo.AddComponent<LibraryPanelMinimizer>(panel.gameObject);
+            var minimizerSettings = new SerializedObject(minimizer);
+            minimizerSettings.FindProperty("m_Panel").objectReferenceValue = panel;
+            minimizerSettings.FindProperty("m_ToggleButton").objectReferenceValue = minimizeButton;
+            minimizerSettings.FindProperty("m_ToggleLabel").objectReferenceValue = minimizeLabel;
+            minimizerSettings.FindProperty("m_MinimizedHeight").floatValue = k_HandleHeight;
+            minimizerSettings.ApplyModifiedPropertiesWithoutUndo();
 
             if (Object.FindAnyObjectByType<EventSystem>() == null)
                 Debug.LogWarning("No active EventSystem in the scene. The library UI will not receive touches until one is added.");
@@ -182,6 +200,38 @@ namespace ForagAR.Library.Editor
             var image = panel.gameObject.AddComponent<Image>();
             image.color = k_PanelColor;
             return panel;
+        }
+
+        /// <summary>
+        /// The strip along the top of the panel with the arrow button that minimizes and expands it.
+        /// It is the only part left on screen while the panel is minimized.
+        /// </summary>
+        static Button CreateHandle(RectTransform panel, out TMP_Text label)
+        {
+            var handle = CreateUIObject("Handle", panel);
+            handle.anchorMin = new Vector2(0f, 1f);
+            handle.anchorMax = new Vector2(1f, 1f);
+            handle.pivot = new Vector2(0.5f, 1f);
+            handle.offsetMin = new Vector2(0f, -k_HandleHeight);
+            handle.offsetMax = Vector2.zero;
+
+            var button = TMP_DefaultControls.CreateButton(ControlResources());
+            button.name = "Minimize Button";
+            button.transform.SetParent(handle, false);
+            var buttonRect = (RectTransform)button.transform;
+            buttonRect.anchorMin = new Vector2(0.5f, 0.5f);
+            buttonRect.anchorMax = new Vector2(0.5f, 0.5f);
+            buttonRect.pivot = new Vector2(0.5f, 0.5f);
+            buttonRect.sizeDelta = k_MinimizeButtonSize;
+            buttonRect.anchoredPosition = Vector2.zero;
+            button.GetComponent<Image>().color = k_SurfaceColor;
+
+            // LibraryPanelMinimizer swaps this between ▼ and ▲.
+            label = button.GetComponentInChildren<TMP_Text>();
+            label.text = "▼";
+            label.fontSize = 36f;
+            label.color = k_TextColor;
+            return button.GetComponent<Button>();
         }
 
         static void CreateFilterBar(RectTransform panel)
@@ -288,6 +338,7 @@ namespace ForagAR.Library.Editor
             public TMP_Text body;
             public ScrollRect bodyScroll;
             public Button backButton;
+            public Button[] tabButtons;
         }
 
         static InfoSection CreateInfoSection(RectTransform panel)
@@ -331,6 +382,9 @@ namespace ForagAR.Library.Editor
             section.scientificName = scientificName;
 
             top += scientificNameHeight + 16f;
+            section.tabButtons = CreateTabBar(section.root, top);
+
+            top += k_TabBarHeight + 12f;
             var divider = CreateUIObject("Divider", section.root);
             SetTopStrip(divider, top, 2f);
             divider.gameObject.AddComponent<Image>().color = k_DividerColor;
@@ -349,7 +403,7 @@ namespace ForagAR.Library.Editor
             viewport.gameObject.AddComponent<RectMask2D>();
             viewport.gameObject.AddComponent<Image>().color = Color.clear;
 
-            var body = CreateText("Identification Text", viewport, "Identifiers", 38f, k_TextColor);
+            var body = CreateText("Tab Text", viewport, "Description", 38f, k_TextColor);
             body.alignment = TextAlignmentOptions.TopLeft;
             body.textWrappingMode = TextWrappingModes.Normal;
             body.lineSpacing = 10f;
@@ -370,12 +424,60 @@ namespace ForagAR.Library.Editor
         }
 
         /// <summary>
-        /// An empty object filling the whole panel, used to show or hide one view of the panel at a time.
+        /// A row of equally wide tab buttons, one per <see cref="MushroomInfoTab"/> in order.
+        /// <see cref="MushroomInfoView"/> colors the selected one and swaps the text below.
+        /// </summary>
+        static Button[] CreateTabBar(RectTransform parent, float top)
+        {
+            var bar = CreateUIObject("Tab Bar", parent);
+            SetTopStrip(bar, top, k_TabBarHeight);
+
+            var layout = bar.gameObject.AddComponent<HorizontalLayoutGroup>();
+            layout.spacing = k_TabSpacing;
+            layout.childControlWidth = true;
+            layout.childControlHeight = true;
+            layout.childForceExpandWidth = true;
+            layout.childForceExpandHeight = true;
+
+            var tabs = (MushroomInfoTab[])System.Enum.GetValues(typeof(MushroomInfoTab));
+            var buttons = new Button[tabs.Length];
+            for (var i = 0; i < tabs.Length; i++)
+            {
+                var tabName = MushroomInfoView.GetTabName(tabs[i]);
+                var button = TMP_DefaultControls.CreateButton(ControlResources());
+                button.name = tabName + " Tab";
+                button.transform.SetParent(bar, false);
+                button.GetComponent<Image>().color = k_SurfaceColor;
+
+                // Same width for every tab, whatever the length of its name.
+                var layoutElement = button.AddComponent<LayoutElement>();
+                layoutElement.minWidth = 0f;
+                layoutElement.preferredWidth = 0f;
+                layoutElement.flexibleWidth = 1f;
+
+                var label = button.GetComponentInChildren<TMP_Text>();
+                label.text = tabName;
+                label.color = k_MutedTextColor;
+                label.textWrappingMode = TextWrappingModes.NoWrap;
+                // Shrinks long names such as "Look-Alikes" to fit narrow screens.
+                label.enableAutoSizing = true;
+                label.fontSizeMin = 20f;
+                label.fontSizeMax = 32f;
+                SetAnchors(label.rectTransform, Vector2.zero, Vector2.one, new Vector2(8f, 0f), new Vector2(-8f, 0f));
+
+                buttons[i] = button.GetComponent<Button>();
+            }
+
+            return buttons;
+        }
+
+        /// <summary>
+        /// An empty object filling the panel below its handle, used to show or hide one view of the panel at a time.
         /// </summary>
         static RectTransform CreateGroup(string name, RectTransform panel)
         {
             var group = CreateUIObject(name, panel);
-            SetAnchors(group, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero);
+            SetAnchors(group, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, -k_HandleHeight));
             return group;
         }
 
