@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -42,5 +43,9 @@ namespace ForagAR.Library
         [TextArea(6, 30)]
         [Tooltip("Look-Alikes tab: which mushrooms this one can be confused with and how to tell them apart.")]
         public string lookAlikes;
+
+        [TextArea(6, 30)]
+        [Tooltip("Quickly identifiable features of the mushroom. Empty if there are none.")]
+        public string quick_characteristics;
     }
 }

@@ -65,3 +65,5 @@ MonoBehaviour:
       species), which can also resemble puffballs, are poisonous or potentially toxic
       and often have darker internal flesh. <b>Never eat a wild mushroom based on
       its external appearance alone.</b>'
+    quick_characteristics: "<b>Quick identifiers:</b>\n - Big and round\n - No gills\n
+      - Inside should be completely white"
