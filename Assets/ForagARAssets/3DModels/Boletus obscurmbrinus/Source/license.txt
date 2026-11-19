@@ -1,0 +1,11 @@
+Model Information:
+* title:	Boletus obscurumbrinus (オオコゲチャイロガワリ)
+* source:	https://sketchfab.com/3d-models/boletus-obscurumbrinus-a2abc64f5bf44102adb20dcc03a537f8
+* author:	daicha2021 (https://sketchfab.com/daicha2021)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Boletus obscurumbrinus (オオコゲチャイロガワリ)" (https://sketchfab.com/3d-models/boletus-obscurumbrinus-a2abc64f5bf44102adb20dcc03a537f8) by daicha2021 (https://sketchfab.com/daicha2021) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
