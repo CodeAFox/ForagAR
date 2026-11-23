@@ -317,7 +317,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8829377244055881403}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b309761041ee54265b7f9a8c0f373dab, type: 3}
   m_Name: 
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_MinScale: 0.25
   m_MaxScale: 2
   m_ScaleSensitivity: 0.75
-  m_Elasticity: 0.15
+  m_Elasticity: -13.39
   m_EnableElasticBreakLimit: 0
   m_ElasticBreakLimit: 0.5
 --- !u!114 &392572006429630382
