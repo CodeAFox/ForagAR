@@ -1,9 +1,5 @@
-using System;
 using TMPro;
-//using Unity.Tutorials.Editor;
-using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ForagAR.Library
