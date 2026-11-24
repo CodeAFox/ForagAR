@@ -1,0 +1,59 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace ForagAR.Library
+{
+    public class FloatingPanelController : MonoBehaviour
+    {
+        private PlacedMushroom current;
+        public GameObject characteristics;   
+        public Camera cameraPlace;
+        public TMP_Text quick_characteristics;
+        public Toggle enable;
+
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            PlacedMushroom.selected += OnMushroomSelected;
+            characteristics.SetActive(false);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if(enable.isOn && panelCanBeShown())
+            {
+                characteristics.SetActive(true);
+            }
+            else
+            {
+                characteristics.SetActive(false);
+            }
+
+            if(current != null)
+            {   
+                characteristics.transform.position = new Vector3(current.gameObject.transform.position.x, current.gameObject.transform.position.y + 0.5f, current.gameObject.transform.position.z);
+                characteristics.transform.LookAt(cameraPlace.transform.position);
+            }
+            
+        }
+
+        void OnMushroomSelected(PlacedMushroom mushroom)
+        {
+            current = mushroom;
+            if(panelCanBeShown())
+            {
+                characteristics.SetActive(true);
+                quick_characteristics.SetText(current.entry.quick_characteristics);
+            }
+        }
+
+        private bool panelCanBeShown()
+        {
+            return current != null && current.entry.quick_characteristics != null && !current.entry.quick_characteristics.Equals("");
+        }
+    }
+}
+
+
