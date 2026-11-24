@@ -1,6 +1,6 @@
 using System;
 using TMPro;
-using Unity.Tutorials.Editor;
+//using Unity.Tutorials.Editor;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -26,7 +26,7 @@ namespace ForagAR.Library
         // Update is called once per frame
         void Update()
         {
-            if(enable.isOn)
+            if(enable.isOn && panelCanBeShown())
             {
                 characteristics.SetActive(true);
             }
@@ -46,11 +46,16 @@ namespace ForagAR.Library
         void OnMushroomSelected(PlacedMushroom mushroom)
         {
             current = mushroom;
-            if(mushroom.entry.quick_characteristics.IsNotNullOrEmpty())
+            if(panelCanBeShown())
             {
                 characteristics.SetActive(true);
-                quick_characteristics.SetText(mushroom.entry.quick_characteristics);
+                quick_characteristics.SetText(current.entry.quick_characteristics);
             }
+        }
+
+        private bool panelCanBeShown()
+        {
+            return current != null && current.entry.quick_characteristics != null && !current.entry.quick_characteristics.Equals("");
         }
     }
 }
