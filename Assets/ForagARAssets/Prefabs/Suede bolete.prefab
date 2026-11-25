@@ -323,6 +323,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6565297600535183908, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -6565297600535183908, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.07
+      objectReference: {fileID: 0}
+    - target: {fileID: -6565297600535183908, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.8
+      objectReference: {fileID: 0}
     - target: {fileID: -6275289987873506765, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -435,10 +447,39 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -40786031822273565, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7214373903890179264}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
 --- !u!4 &6450959145625801707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
   m_PrefabInstance: {fileID: 9153121620818117659}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6642157128586811808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: 59d925b5768a2ad4bbf9cd6e8c18b298, type: 3}
+  m_PrefabInstance: {fileID: 9153121620818117659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7214373903890179264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642157128586811808}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10822296, y: 0.12350461, z: 0.122371644}
+  m_Center: {x: -28.397678, y: 33.800186, z: 10.060217}
