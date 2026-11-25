@@ -67,3 +67,30 @@ MonoBehaviour:
       its external appearance alone.</b>'
     quick_characteristics: "<b>Quick identifiers:</b>\n - Big and round\n - No gills\n
       - Inside should be completely white"
+  - displayName: Test
+    prefab: {fileID: 8829377244055881403, guid: 537c20698b405314cadbe984b9b4bb35, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
+  - displayName: Puffball Mushroom 1
+    prefab: {fileID: 8829377244055881403, guid: 2c8fb8322e584504baa6753e02ac58a6, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
+  - displayName: Puffball Mushroom 2
+    prefab: {fileID: 8829377244055881403, guid: a6db174f9825c1a40b6851035a7d1faf, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
