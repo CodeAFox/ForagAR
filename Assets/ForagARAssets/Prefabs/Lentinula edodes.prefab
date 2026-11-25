@@ -307,6 +307,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: scene
       objectReference: {fileID: 0}
+    - target: {fileID: -6366768376665628306, guid: 5884e933426b20542a7fec4b598d93e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: -6366768376665628306, guid: 5884e933426b20542a7fec4b598d93e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: -6366768376665628306, guid: 5884e933426b20542a7fec4b598d93e2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: -6366768376665628306, guid: 5884e933426b20542a7fec4b598d93e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 5884e933426b20542a7fec4b598d93e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07161
@@ -379,8 +395,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 36.47896, y: 33.870792, z: 28.816353}
-  m_Center: {x: -8.719657, y: 0.84002113, z: 13.90818}
+  m_Size: {x: 0.24264024, y: 0.19396593, z: 0.21579373}
+  m_Center: {x: -0.013413064, y: -0.0012746453, z: 0.16557147}
 --- !u!4 &978137392577274615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 5884e933426b20542a7fec4b598d93e2, type: 3}

@@ -102,9 +102,15 @@ MonoBehaviour:
 
 '
     lookAlikes: 
-    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nFine white network
-      at the top of stem\nDoes not change colour when cut\r\nPores do not show any
-      pink tinge "
+    quick_characteristics: '<b>Quick identifiers:</b>
+
+      - Fine white network
+      at the top of stem
+
+      - Does not change colour when cut
+
+      - Pores
+      do not show any pink '
   - displayName: Porcini Boletus
     prefab: {fileID: 8829377244055881403, guid: 2f5f8f0a2cd14a142bfa10f0ace703a0, type: 3}
     thumbnailOverride: {fileID: 0}
@@ -117,9 +123,15 @@ MonoBehaviour:
 '
     uses: 
     lookAlikes: 
-    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nFine white network
-      at the top of stem\r\nDoes not change colour when cut\r\nPores do not show
-      any pink tinge"
+    quick_characteristics: '<b>Quick identifiers:</b>
+
+      Fine white network
+      at the top of stem
+
+      Does not change colour when cut
+
+      Pores do
+      not show any pink'
   - displayName: Shiitake Mushroom
     prefab: {fileID: 8829377244055881403, guid: a6db174f9825c1a40b6851035a7d1faf, type: 3}
     thumbnailOverride: {fileID: 0}
@@ -136,26 +148,14 @@ MonoBehaviour:
     uses: Used in food, but it must be cooked thoroughly.
     lookAlikes: 'Funeral Bell: compared to the shiitake''s white spore print, it
       has a rusty-brown spore print.'
-    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nWhite spore print\r\nGrows
-      on dead trees\r\nWhite flesh with pleasant mushroom smell"
-  - displayName: Shiitake mushroom
-    prefab: {fileID: 8829377244055881403, guid: 735ba9a73c846ad4d93ec1fd5956f26f, type: 3}
-    thumbnailOverride: {fileID: 0}
-    scientificName: 
-    description: 'The cap is light brown to reddish brown 5 to 10 cm across. It It
-      often has whitish scales towards the edge of the cap.
+    quick_characteristics: '<b>Quick identifiers:</b>
 
-      The gills are
-      white and turn brown when bruised / with age.
+      - White spore print
 
-      The stem is whitish and
-      often off-centre and curved.'
-    habitat: Found in East and Southeast Asia on decaying trees.
-    uses: Used in food, but it must be cooked thoroughly.
-    lookAlikes: 'Funeral Bell: compared to the shiitake''s white spore print, it
-      has a rusty-brown spore print.'
-    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nWhite spore print\r\nGrows
-      on dead trees\r\nWhite flesh with pleasant mushroom smell"
+      -
+      Grows on dead trees
+
+      - White flesh with pleasant mushroom smell'
   - displayName: Suede bolete
     prefab: {fileID: 8829377244055881403, guid: e55dfc09304757947865d28a17b0fdab, type: 3}
     thumbnailOverride: {fileID: 0}
