@@ -67,7 +67,7 @@ MonoBehaviour:
       its external appearance alone.</b>'
     quick_characteristics: "<b>Quick identifiers:</b>\n - Big and round\n - No gills\n
       - Inside should be completely white"
-  - displayName: Test
+  - displayName: Bolete Tylopilus
     prefab: {fileID: 8829377244055881403, guid: 537c20698b405314cadbe984b9b4bb35, type: 3}
     thumbnailOverride: {fileID: 0}
     scientificName: 
@@ -76,7 +76,7 @@ MonoBehaviour:
     uses: 
     lookAlikes: 
     quick_characteristics: 
-  - displayName: Puffball Mushroom 1
+  - displayName: Boletus
     prefab: {fileID: 8829377244055881403, guid: 2c8fb8322e584504baa6753e02ac58a6, type: 3}
     thumbnailOverride: {fileID: 0}
     scientificName: 
@@ -85,8 +85,44 @@ MonoBehaviour:
     uses: 
     lookAlikes: 
     quick_characteristics: 
-  - displayName: Puffball Mushroom 2
+  - displayName: Lentinula edodes
     prefab: {fileID: 8829377244055881403, guid: a6db174f9825c1a40b6851035a7d1faf, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
+  - displayName: Porcini Boletus
+    prefab: {fileID: 8829377244055881403, guid: 2f5f8f0a2cd14a142bfa10f0ace703a0, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
+  - displayName: Shiitake mushroom
+    prefab: {fileID: 8829377244055881403, guid: 735ba9a73c846ad4d93ec1fd5956f26f, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
+  - displayName: Suede bolete
+    prefab: {fileID: 8829377244055881403, guid: e55dfc09304757947865d28a17b0fdab, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: 
+    description: 
+    habitat: 
+    uses: 
+    lookAlikes: 
+    quick_characteristics: 
+  - displayName: Tricholoma matsutake
+    prefab: {fileID: 8829377244055881403, guid: 140f9cf3e115172419716eddfc928b20, type: 3}
     thumbnailOverride: {fileID: 0}
     scientificName: 
     description: 
