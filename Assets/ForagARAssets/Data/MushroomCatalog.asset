@@ -67,66 +67,129 @@ MonoBehaviour:
       its external appearance alone.</b>'
     quick_characteristics: "<b>Quick identifiers:</b>\n - Big and round\n - No gills\n
       - Inside should be completely white"
-  - displayName: Bolete Tylopilus
+  - displayName: Rusty Bolete
     prefab: {fileID: 8829377244055881403, guid: 537c20698b405314cadbe984b9b4bb35, type: 3}
     thumbnailOverride: {fileID: 0}
-    scientificName: 
-    description: 
-    habitat: 
-    uses: 
-    lookAlikes: 
-    quick_characteristics: 
-  - displayName: Boletus
+    scientificName: Tylopilus ferrugineus
+    description: 'It''s name derives from the colour of its reddish-brown cap.
+
+      The
+      stem is also brown like the cap except for a paler area near the top. It is
+      club shaped when young and occasionally has a net-like pattern right under
+      the cap.'
+    habitat: It is found in North America, usually in oak woods east of the Rocky
+      Mountains.
+    uses: Used in food items. Has a mild taste.
+    lookAlikes: Bitter bolete; edible, but incredibly bitter. Has a dark brown net
+      on the stem.
+    quick_characteristics: 'Rust-coloured
+
+      Bruises brown
+
+      Stains pinkish
+      to brownis when sliced'
+  - displayName: Cep / King Bolete
     prefab: {fileID: 8829377244055881403, guid: 2c8fb8322e584504baa6753e02ac58a6, type: 3}
     thumbnailOverride: {fileID: 0}
-    scientificName: 
-    description: 
-    habitat: 
-    uses: 
+    scientificName: 'Boletus edulis '
+    description: General appearance, colour and size vary a lot. They have a fine
+      white network on the top of the stem right underneath the tubes, although it
+      may spread further down the stalk too.
+    habitat: 'Can be found virtually everywhere.
+
+'
+    uses: '
+
+'
     lookAlikes: 
-    quick_characteristics: 
-  - displayName: Lentinula edodes
-    prefab: {fileID: 8829377244055881403, guid: a6db174f9825c1a40b6851035a7d1faf, type: 3}
-    thumbnailOverride: {fileID: 0}
-    scientificName: 
-    description: 
-    habitat: 
-    uses: 
-    lookAlikes: 
-    quick_characteristics: 
+    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nFine white network
+      at the top of stem\nDoes not change colour when cut\r\nPores do not show any
+      pink tinge "
   - displayName: Porcini Boletus
     prefab: {fileID: 8829377244055881403, guid: 2f5f8f0a2cd14a142bfa10f0ace703a0, type: 3}
     thumbnailOverride: {fileID: 0}
     scientificName: 
-    description: 
-    habitat: 
+    description: General appearance, colour and size vary a lot. They have a fine
+      white network on the top of the stem right underneath the tubes, although it
+      may spread further down the stalk too.
+    habitat: 'Can be found virtually everywhere.
+
+'
     uses: 
     lookAlikes: 
-    quick_characteristics: 
+    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nFine white network
+      at the top of stem\r\nDoes not change colour when cut\r\nPores do not show
+      any pink tinge"
+  - displayName: Shiitake Mushroom
+    prefab: {fileID: 8829377244055881403, guid: a6db174f9825c1a40b6851035a7d1faf, type: 3}
+    thumbnailOverride: {fileID: 0}
+    scientificName: Lentinula edodes
+    description: 'The cap is light brown to reddish brown 5 to 10 cm across. It often
+      has whitish scales towards the edge of the cap.
+
+      The gills are white
+      and turn brown when bruised / with age.
+
+      The stem is whitish and often
+      off-centre and curved.'
+    habitat: Found in East and Southeast Asia on decaying trees.
+    uses: Used in food, but it must be cooked thoroughly.
+    lookAlikes: 'Funeral Bell: compared to the shiitake''s white spore print, it
+      has a rusty-brown spore print.'
+    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nWhite spore print\r\nGrows
+      on dead trees\r\nWhite flesh with pleasant mushroom smell"
   - displayName: Shiitake mushroom
     prefab: {fileID: 8829377244055881403, guid: 735ba9a73c846ad4d93ec1fd5956f26f, type: 3}
     thumbnailOverride: {fileID: 0}
     scientificName: 
-    description: 
-    habitat: 
-    uses: 
-    lookAlikes: 
-    quick_characteristics: 
+    description: 'The cap is light brown to reddish brown 5 to 10 cm across. It It
+      often has whitish scales towards the edge of the cap.
+
+      The gills are
+      white and turn brown when bruised / with age.
+
+      The stem is whitish and
+      often off-centre and curved.'
+    habitat: Found in East and Southeast Asia on decaying trees.
+    uses: Used in food, but it must be cooked thoroughly.
+    lookAlikes: 'Funeral Bell: compared to the shiitake''s white spore print, it
+      has a rusty-brown spore print.'
+    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nWhite spore print\r\nGrows
+      on dead trees\r\nWhite flesh with pleasant mushroom smell"
   - displayName: Suede bolete
     prefab: {fileID: 8829377244055881403, guid: e55dfc09304757947865d28a17b0fdab, type: 3}
     thumbnailOverride: {fileID: 0}
-    scientificName: 
-    description: 
-    habitat: 
-    uses: 
-    lookAlikes: 
-    quick_characteristics: 
+    scientificName: Xerocomus subtomentosus
+    description: 'The cap is olive brown, tan or yellowish brown and velvety.
+
+      The
+      stem is pale yellowish to light brown and usually has coarse brownish ribs
+      near the top. It does not have a fine white network.'
+    habitat: Found in coniferous woods across Europe, North America and Asia.
+    uses: 'Used in food, has a mild taste and quickly turns slimy in the pan. '
+    lookAlikes: 'Red Cracked Bolete: Has red cracks on its cap especially after /
+      during dry seasons.'
+    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nDry, velvety cap\r\nCracks
+      in cap are yellow\r\nHas tubes and not gills"
   - displayName: Tricholoma matsutake
     prefab: {fileID: 8829377244055881403, guid: 140f9cf3e115172419716eddfc928b20, type: 3}
     thumbnailOverride: {fileID: 0}
-    scientificName: 
-    description: 
-    habitat: 
-    uses: 
-    lookAlikes: 
-    quick_characteristics: 
+    scientificName: Matsutake / Pine Mushroom
+    description: 'It grows half-buried in the ground.
+
+      The cap is 6 to 20
+      cm across, brown with darker brown fibres and scales.
+
+      The flesh is
+      white.
+
+      It has a spicy and cinnamon-like smell.'
+    habitat: 'It can be found in pine trees mainly in East Asia, but can be found
+      in Northern Europe as well.
+
+      It is most often found among moss and lichen.'
+    uses: Used in food, has great taste.
+    lookAlikes: 'Amanita smithiana: It lacks matsutake''s distinct smell and has
+      a brown spore print.'
+    quick_characteristics: "<b>Quick identifiers:</b>\r\n \r\nStrong, spicy, cinnamon-like
+      smell\r\nWhite spore print\r\nVery firm, doesn't crumble"
