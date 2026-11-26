@@ -11,3 +11,5 @@ We added more mushroom entries to the library and brought more mushroom prefabs 
 Adding a mushroom involves working with both parts of the project. There’s the entry users see when they browse the library, and there’s the prefab that gives the mushroom a visual presence in Unity. Prefabs let us keep each model and its settings together as a reusable asset. As the collection grows, that makes it easier to manage the models and use them consistently across the project.
 
 What we liked about this week was seeing the interface and the content come together. The new entries gave us more to browse, and the updated menu gave that growing collection more room.
+
+Author: Salomeea

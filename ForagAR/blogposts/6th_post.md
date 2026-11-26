@@ -13,3 +13,5 @@ We also began setting up the environment for the VR project in Unity. At this st
 Having a scene to work in also gives us a better sense of how the assets and interface might work together. A mushroom model can look fine on its own in the Unity editor, but seeing it next to other objects in the environment helps us judge its scale and placement.
 
 We put together the first version of the XR UI. We focused on getting the basic layout in place so we could see how the interface fits alongside the objects in the scene. As we add more interactions, we can use this version to decide which controls need to stay visible and which information should appear when the user interacts with something.
+
+Author: Salomeea
