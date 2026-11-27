@@ -1,16 +1,15 @@
-The last meeting was held online for comfort. As during the previous week, there were no meetings held, during this one there were a lot of things we had to discuss.
-First and foremost we discussed the timeline of events; as the expo is drawing closer, we decided to come up with a list of tasks that still need to be completed before that.
+The last meeting was held online for comfort. As during the previous week, there were no meetings held, during this one there were a lot of things we had to discuss. First and foremost we discussed the timeline of events; as the expo is drawing closer, we decided to come up with a list of tasks that still need to be completed before that.
 
-For the AR project, we have discussed that adding the mushrooms is a top priority as that has been dragged on for a bit too long and we need to be able to test the whole application. Furthermore, in light of our last session in person, when we consulted Kasper, we have decided to make the app a bit more interactable by making the mushrooms be able to rotate and be moved. 
-This is also favourable, as people who wish to see the gills, and otherwise not-very-visible parts of the mushroom, now would be able to do it further helping with the identification process.
+For the AR project, we have discussed that adding the mushrooms is a top priority as that has been dragged on for a bit too long due to the issues we have encountered with git lfs and we need to be able to test the whole application once we are ready to build it onto the phone. Furthermore, in light of our last session in person, when we consulted Kasper, we have decided to make the app a bit more interactable by making the mushrooms be able to rotate and be moved (Kriszti). This is also favourable, as people who wish to see the gills, and otherwise not-very-visible parts of the mushroom, now would be able to do it, further helping with the identification process.
 
-As for the VR project, there was a bigger list of tasks that needed to be taken care of. 
-This included the base features (the conditions) first and foremost. The implementation of colourblindness (taken by Angela), visual snow (taken by Kriszti), dyslexia, central vision loss (taken by Alex) and light sensitivity are the most important, however, we have decided to leave dyslexia as the last to be implemented in case we run out of time.
-Another feature we have discussed and decided to add were sorting boxes with coloured pebbles. This is so that when people try out our simulator, they can walk around and interact with the environment and truly experience the difficulties of having these conditions.
+As for the VR project, there was a bigger list of tasks that needed to be taken care of. This included the base features (the conditions) first and foremost. The implementation of colourblindness (taken by Angela), visual snow (taken by Kriszti), dyslexia, central vision loss (taken by Alex) and light sensitivity (taken by Salomeea) are the most important, however, we have decided to leave dyslexia as the last to be implemented in case we run out of time. Another feature we have discussed and decided to add were sorting boxes with coloured pebbles. As we already had the 3d model of a table in the simulated environment, adding these boxes on top of it would fit into the scene. This is so that when people try out our simulator, they can walk around and interact with the environment and truly experience the difficulties of having these conditions. This was also reinforced by agreeing that the text on the boxes, indicating which colours should go were, should be black. This is because while a colourblind person most likely wouldn’t be able to tell the difference, someone suffering from other conditions might be able to try and „cheat” their way out of having to read the labels instead focusing ont he colours of said labels. This way the boxes can be tested and interacted with not just with the colourblindness set as the condition, but all the others as well making it especially interactable.
 Lastly, instructions should be added to the environment (taken by Angela), so that people joining have a bit of guidance.
 
-Writing the devblogs and creating the video demonstration were also brought up as tasks that needed to be completed before the deadline.
-We have decided to meet next week Thursday, 11:00.
+Since our last meeting, discussions in the established group chat have also taken place and implementation of a few conditions have also begun.
+One such condition was for visual snow. By this meeting, most of the research on how to implement it was done and partially implemented.
+Since visual snow is akin to tv static overlaid on our vision, Unity’s shader graphs would be used to create such an effect that could be then used on the camera. Furthermore, discussion on implementing a „migraine strength” adjustment of some sorts were also brought up, as visual snow can get almost blinding in case of severe migraines.
+Few things we had to consider however;
 
-Author:
-Krisztina Csilla Illés
+Writing the devblogs and creating the video demonstration were also brought up as tasks that needed to be completed before the deadline. We have decided to meet next week Thursday, 11:00.
+
+Author: Krisztina Csilla Illés
