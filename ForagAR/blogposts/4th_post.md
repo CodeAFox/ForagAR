@@ -12,4 +12,5 @@ Adding a mushroom involves working with both parts of the project. There’s the
 
 What we liked about this week was seeing the interface and the content come together. The new entries gave us more to browse, and the updated menu gave that growing collection more room.
 
+Unfortunately, the entire push to GitHub failed because some of the mushroom files were too large. When we went back into Unity, we found that all the mushroom prefabs were missing. We had to redo the work of adding the mushrooms, including adding the prefabs back into the project. We also needed to figure out how to push the large assets so the rest of the team could use them.
 Author: Salomeea
